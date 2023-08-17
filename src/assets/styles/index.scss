@@ -1,0 +1,105 @@
+// 500 - medium
+@font-face {
+    font-family: 'Hanken Grotesk';
+    font-style: normal;
+    font-weight: 500;
+    src: url('../fonts/HankenGrotesk-Medium.ttf');
+}
+
+// 700 - bold
+@font-face {
+    font-family: 'Hanken Grotesk';
+    font-style: normal;
+    font-weight: 700;
+    src: url('../fonts/HankenGrotesk-Bold.ttf');
+}
+
+// 800 - extra bold
+@font-face {
+    font-family: 'Hanken Grotesk';
+    font-style: normal;
+    font-weight: 800;
+    src: url('../fonts/HankenGrotesk-ExtraBold.ttf');
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Hanken Grotesk';
+}
+
+.App {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-weight: 500;
+
+    .card {
+        width: 735px;
+        height: 512px;
+        border-radius: 30px;
+        // TODO: change box-shadow
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+        background-color: white;
+
+        &__score {
+            width: 50%;
+            height: 100%;
+            border-radius: 30px;
+            background: linear-gradient(180deg, rgba(102, 65, 254, 1) 0%, rgba(49, 44, 235, 1));
+            padding: 40px 59px 56px;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            &__header {
+                color: rgba(204, 200, 255, 1);
+                font-weight: 700;
+                font-size: 24px;
+                text-transform: capitalize;
+            }
+
+            &__circle {
+                border-radius: 100%;
+                background: linear-gradient(180deg, rgba(76, 35, 202, 1) 0%, rgba(70, 53, 243, 1));
+                height: 195px;
+                width: 195px;
+                margin: 32px 0;
+
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+
+                // change gap between items
+                &__points {
+                    color: white;
+                    font-weight: 800;
+                    font-size: 70px;
+                }
+
+                &__total {
+                    color: rgba(140, 125, 255, 1);
+                    font-weight: 700;
+                    font-size: 18px;
+                }
+            }
+
+            &__paragraph_title {
+                color: white;
+                font-size: 30px;
+                font-weight: 700;
+            }
+
+            &__paragraph {
+                color: rgba(191, 190, 255, 1);
+                text-align: center;
+                margin-top: 18px;
+                font-size: 17px;
+            }
+        }
+    }
+}
