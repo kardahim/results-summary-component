@@ -1,24 +1,22 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './assets/styles/index.scss';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {/* index page */}
+      <div className="card">
+        <div className="card__score">
+          <div className="card__score__header"></div>
+          <div className="card__score__circle">
+            <div className="card__score__circle__points"></div>
+            <div className="card__score__circle__total"></div>
+          </div>
+          <div className="card__score__header"></div>
+          <p className="card__score__paragraph"></p>
+        </div>
+        <div className="card__summary"></div>
+      </div>
     </div>
   );
 }
