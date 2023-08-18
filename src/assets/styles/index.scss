@@ -44,6 +44,8 @@
         box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
         background-color: white;
 
+        display: flex;
+
         &__score {
             width: 50%;
             height: 100%;
@@ -99,6 +101,18 @@
                 text-align: center;
                 margin-top: 18px;
                 font-size: 17px;
+            }
+        }
+
+        &__summary {
+            padding: 40px;
+            width: 50%;
+
+            &__header {
+                font-size: 24px;
+                font-weight: 700;
+                color: rgba(48, 59, 89, 1);
+                margin-bottom: 25px;
             }
         }
     }

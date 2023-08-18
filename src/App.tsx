@@ -1,7 +1,23 @@
 import React from 'react';
 import './assets/styles/index.scss';
+import skills from './data/data.json';
+// components
+import SkillPanel from './components/SkillPanel';
+// icons
+import Reaction from './assets/icons/icon-reaction.svg';
+import Memory from './assets/icons/icon-memory.svg';
+import Verbal from './assets/icons/icon-verbal.svg';
+import Visual from './assets/icons/icon-visual.svg';
 
 function App() {
+
+  const icons = [Reaction, Memory, Verbal, Visual]
+  const colors: string[] = ['red', 'yellow', 'green', 'blue']
+
+  // calculate average score
+  const total = skills.map(skill => skill.score).reduce((acc, c) => acc + c, 0) / skills.length;
+
+
   return (
     <div className="App">
       {/* index page */}
@@ -11,7 +27,7 @@ function App() {
             your result
           </div>
           <div className="card__score__circle">
-            <span className="card__score__circle__points">{76}</span>
+            <span className="card__score__circle__points">{total.toFixed(0)}</span>
             <span className="card__score__circle__total">of 100</span>
           </div>
           <div className="card__score__paragraph_title">Great</div>
@@ -19,7 +35,19 @@ function App() {
             You scored higher thean 65% of the people who have taken these tests.
           </p>
         </div>
-        <div className="card__summary"></div>
+        <div className="card__summary">
+          <div className="card__summary__header">Summary</div>
+          {skills.map((skill, idx) =>
+            <SkillPanel
+              category={skill.category}
+              score={skill.score}
+              // i cant load icons dynamically
+              icon={icons[idx]}
+              color={colors[idx]}
+            />
+          )}
+          {/* button component */}
+        </div>
       </div>
     </div>
   );
