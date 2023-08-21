@@ -1,8 +1,11 @@
 import React from 'react';
 import './assets/styles/index.scss';
 import skills from './data/data.json';
+
 // components
 import SkillPanel from './components/SkillPanel';
+import Button from './components/Button';
+
 // icons
 import Reaction from './assets/icons/icon-reaction.svg';
 import Memory from './assets/icons/icon-memory.svg';
@@ -16,7 +19,6 @@ function App() {
 
   // calculate average score
   const total = skills.map(skill => skill.score).reduce((acc, c) => acc + c, 0) / skills.length;
-
 
   return (
     <div className="App">
@@ -39,14 +41,16 @@ function App() {
           <div className="card__summary__header">Summary</div>
           {skills.map((skill, idx) =>
             <SkillPanel
+              key={`SkillPanel__${idx}`}
               category={skill.category}
               score={skill.score}
               // i cant load icons dynamically
+              // the path in json isnt necessary
               icon={icons[idx]}
               color={colors[idx]}
             />
           )}
-          {/* button component */}
+          <Button text='Continue' />
         </div>
       </div>
     </div>
