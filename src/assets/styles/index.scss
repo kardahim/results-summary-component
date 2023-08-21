@@ -143,6 +143,10 @@ $mobile-width: 770px;
             }
 
             &__header {
+                @media screen and (max-width: $mobile-width) {
+                    width: 100%;
+                }
+
                 font-size: 24px;
                 font-weight: 700;
                 color: rgba(48, 59, 89, 1);
